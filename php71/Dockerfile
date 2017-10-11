@@ -1,5 +1,7 @@
 FROM php:7.1
 
+LABEL maintainer="tim.spiekerkoetter@hdnet.de"
+
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get update
 RUN apt-get install -y unzip rsync nodejs git ssh
