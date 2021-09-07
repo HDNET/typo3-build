@@ -19,3 +19,4 @@ Directory | Image
 `/php71` | hdnet/typo3-build:php7.1
 `/php73` | hdnet/typo3-build:php7.3
 `/php74` | hdnet/typo3-build:php7.4
+`/php74-node-lts` | hdnet/typo3-build:php7.4-node-lts
