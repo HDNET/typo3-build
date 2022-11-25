@@ -10,7 +10,17 @@
     docker build -f ./Dockerfile -t hdnet/typo3-build:<TAG> . 
     docker push hdnet/typo3-build:<TAG>    
     ```
-   
+ Use docker buildx to build and push multi-arch images.
+ 
+    ```bash
+	docker buildx build \
+	 --push \
+	 --platform linux/amd64,linux/arm64 \
+	 -f ./Dockerfile \
+	 -t hdnet/typo3-build:<TAG> .
+    ```
+ 
+ 
 ## Images
 
 Directory | Image
@@ -21,5 +31,6 @@ Directory | Image
 `/php74` | hdnet/typo3-build:php7.4
 `/php74-node-lts` | hdnet/typo3-build:php7.4-node-lts
 `/php80-node-lts` | hdnet/typo3-build:php8.0-node-lts
+`/php80-node-16` | hdnet/typo3-build:php8.0-node-16
 `/php81-node-lts` | hdnet/typo3-build:php8.1-node-lts
 
