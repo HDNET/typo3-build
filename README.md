@@ -32,5 +32,6 @@ Directory | Image
 `/php74-node-lts` | hdnet/typo3-build:php7.4-node-lts
 `/php80-node-lts` | hdnet/typo3-build:php8.0-node-lts
 `/php80-node-16` | hdnet/typo3-build:php8.0-node-16
+`/php80-node-18` | hdnet/typo3-build:php8.0-node-18
 `/php81-node-lts` | hdnet/typo3-build:php8.1-node-lts
 
