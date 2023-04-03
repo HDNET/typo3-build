@@ -4,14 +4,14 @@
 
 1. Go to the target directory e.g `cd php73`
 2. Build and deploy Docker container. Ensure you have the required rights to push into the HDNET organization.
- 
+
     ```bash
-    docker login 
-    docker build -f ./Dockerfile -t hdnet/typo3-build:<TAG> . 
-    docker push hdnet/typo3-build:<TAG>    
+    docker login
+    docker build -f ./Dockerfile -t hdnet/typo3-build:<TAG> .
+    docker push hdnet/typo3-build:<TAG>
     ```
- Use docker buildx to build and push multi-arch images.
- 
+    Use docker buildx to build and push multi-arch images.
+
     ```bash
 	docker buildx build \
 	 --push \
@@ -19,8 +19,18 @@
 	 -f ./Dockerfile \
 	 -t hdnet/typo3-build:<TAG> .
     ```
- 
- 
+    Use generic Dockerfile (`php8x-node-x/`), you can replace `--push` with `--load` to first try the tag locally.
+
+    ```bash
+	docker buildx build --push \
+	 --platform linux/amd64,linux/arm64 \
+	 --build-arg php_version=8.2 \
+	 --build-arg node_version=lts \
+	 --build-arg npm_version=latest \
+	 -f php8x-node-x/Dockerfile \
+	 -t hdnet/typo3-build:php8.2-node-lts php8x-node-x
+    ```
+
 ## Images
 
 Directory | Image
