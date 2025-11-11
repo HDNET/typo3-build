@@ -15,6 +15,7 @@ RUN curl -sL "https://deb.nodesource.com/setup_${node_version}.x" | bash - && \
     docker-php-ext-configure intl && \
     docker-php-ext-install -j$(nproc) gd gmp zip mysqli soap intl && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    echo "memory_limit = 2G" > /usr/local/etc/php/conf.d/docker-php-hdnet.ini && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www
